@@ -1,0 +1,39 @@
+﻿@model List<Emp>
+
+<div class="container mt-4">
+    <div class="text-end">
+        <a asp-action="AddEmp" asp-controller="Employee" class="btn btn-primary">Add</a>
+    </div>
+    <table class="table table-bordered">
+        <thead class="table-primary">
+            <tr>
+                <th>Id</th>
+                <th>Ename</th>
+                <th>Salary</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Emp emp in Model)
+            {
+                <tr>
+                    <td>@emp.Id</td>
+                    <td>@emp.Ename</td>
+                    <td>@emp.Salary</td>
+                    <td>@emp.Address</td>
+                    <td>@emp.Gender</td>
+                    <td>
+                        <a asp-action="EditEmp" asp-controller="Employee" asp-route-id="@emp.Id" class="btn btn-primary">Edit</a>
+                    </td>
+                    
+                    <td>
+                        <a asp-route-id="@emp.Id" asp-action="DeleteEmp" asp-controller="Employee" class="btn btn-danger" onclick="return confirm('Do you really want to delete record?')">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
