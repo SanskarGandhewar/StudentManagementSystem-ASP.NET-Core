@@ -66,7 +66,7 @@ Open the project in Visual Studio
 
 Configure SQL Server connection in appsettings.json
 
-Run the application using IIS Express
+Run the application using Internet Information Services Express
 
 📸 Screenshots
 
